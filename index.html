@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitMe - Your Fitness Journey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">💪 FitMe</div>
+            <ul class="nav-menu">
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#workouts">Workouts</a></li>
+                <li><a href="#progress">Progress</a></li>
+                <li><a href="#nutrition">Nutrition</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="dashboard">
+        <div class="container">
+            <h1>Welcome back! 👋</h1>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🔥</div>
+                    <h3>Calories Burned</h3>
+                    <p class="stat-value" id="calorie">450</p>
+                    <small>kcal Today</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <h3>Workout Time</h3>
+                    <p class="stat-value">45</p>
+                    <small>minutes</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <h3>Streak</h3>
+                    <p class="stat-value">12</p>
+                    <small>days 🔥</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">⚖️</div>
+                    <h3>Weight</h3>
+                    <p class="stat-value">75</p>
+                    <small>kg</small>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <button class="btn btn-primary" onclick="startWorkout()">▶️ Start Workout</button>
+                <button class="btn btn-secondary" onclick="logMeal()">🍽️ Log Meal</button>
+                <button class="btn btn-secondary" onclick="viewGoals()">🎯 View Goals</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workouts Section -->
+    <section id="workouts" class="workouts">
+        <div class="container">
+            <h2>Your Recent Workouts</h2>
+            
+            <div class="workout-list" id="workoutList">
+                <div class="workout-card">
+                    <div class="workout-header">
+                        <h3>🏃 Running</h3>
+                        <span class="badge badge-success">✓ Completed</span>
+                    </div>
+                    <p>5.2 km • 35 minutes</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 100%"></div>
+                    </div>
+                    <small>Today at 7:30 AM</small>
+                </div>
+
+                <div class="workout-card">
+                    <div class="workout-header">
+                        <h3>🏋️ Weight Training</h3>
+                        <span class="badge badge-success">✓ Completed</span>
+                    </div>
+                    <p>Chest & Triceps • 45 minutes</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 100%"></div>
+                    </div>
+                    <small>Yesterday at 6:00 AM</small>
+                </div>
+
+                <div class="workout-card">
+                    <div class="workout-header">
+                        <h3>🧘 Yoga</h3>
+                        <span class="badge badge-progress">⏳ In Progress</span>
+                    </div>
+                    <p>Flexibility • 20 minutes</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 60%"></div>
+                    </div>
+                    <small>12 min remaining</small>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" style="margin-top: 2rem;" onclick="addWorkout()">+ Add Workout</button>
+        </div>
+    </section>
+
+    <!-- Progress Section -->
+    <section id="progress" class="progress-section">
+        <div class="container">
+            <h2>Your Progress</h2>
+            
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <h4>📊 Weekly Goal</h4>
+                    <p class="progress-value">3,500 / 5,000 kcal</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 70%"></div>
+                    </div>
+                    <small>70% Complete</small>
+                </div>
+
+                <div class="goal-card">
+                    <h4>🎯 Daily Goal</h4>
+                    <p class="progress-value">2,100 / 2,500 kcal</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 84%"></div>
+                    </div>
+                    <small>84% Complete</small>
+                </div>
+
+                <div class="goal-card">
+                    <h4>👣 Step Goal</h4>
+                    <p class="progress-value">8,234 / 10,000 steps</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 82%"></div>
+                    </div>
+                    <small>82% Complete</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nutrition Section -->
+    <section id="nutrition" class="nutrition">
+        <div class="container">
+            <h2>Today's Nutrition</h2>
+            
+            <div class="nutrition-grid">
+                <div class="macro-card">
+                    <h4>🍗 Protein</h4>
+                    <p class="macro-value">120g / 150g</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%; background: #FF6B9D;"></div>
+                    </div>
+                    <small>80%</small>
+                </div>
+
+                <div class="macro-card">
+                    <h4>🍞 Carbs</h4>
+                    <p class="macro-value">250g / 300g</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 83%; background: #FEC860;"></div>
+                    </div>
+                    <small>83%</small>
+                </div>
+
+                <div class="macro-card">
+                    <h4>🥑 Fat</h4>
+                    <p class="macro-value">55g / 70g</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 79%; background: #6BCB77;"></div>
+                    </div>
+                    <small>79%</small>
+                </div>
+
+                <div class="macro-card">
+                    <h4>🥬 Fiber</h4>
+                    <p class="macro-value">25g / 30g</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 83%; background: #4D96FF;"></div>
+                    </div>
+                    <small>83%</small>
+                </div>
+            </div>
+
+            <div class="meal-log">
+                <h3>🍴 Meals Today</h3>
+                <div class="meal-item">
+                    <span>🥗 Chicken Salad</span>
+                    <span class="calories">350 kcal</span>
+                </div>
+                <div class="meal-item">
+                    <span>🍌 Banana & Oats</span>
+                    <span class="calories">280 kcal</span>
+                </div>
+                <div class="meal-item">
+                    <span>🐟 Grilled Salmon</span>
+                    <span class="calories">450 kcal</span>
+                </div>
+                <div class="meal-item">
+                    <span>🥤 Protein Shake</span>
+                    <span class="calories">200 kcal</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>💪 FitMe © 2024 | Your Fitness Journey Starts Here! 🚀</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
